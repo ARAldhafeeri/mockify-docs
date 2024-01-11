@@ -1,6 +1,3 @@
-Certainly! Here's the given text converted into Markdown:
-
-```markdown
 # Edge Functions
 Edge functions are functions that run code based on request method type and edge function name. They run code in a sandbox NodeJS VM with an enclosed context. The code running in those functions is defined in the admin portal of mockify.io, so they are trusted. In the future, approval, code review, and other improvements will be put in place to harden the security. Kindly read [Node.js VM docs](https://nodejs.org/api/vm.html).
 
