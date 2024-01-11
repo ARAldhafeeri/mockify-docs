@@ -2,7 +2,7 @@
 
 The policies page is for managing mockify policies, where you can create, edit, and delete policies. Policies can be used in edge functions to mock real-world APIs access control with ease thanks to the gatewatchJS library. The diagram below explains how the library works:
 
-![gatewatch]([./imgs/](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/gatewatch.png)
+![gatewatch]([./imgs/](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/gatewatch.png?raw=true)
 
 For more information, visit the [gatewatchJS GitHub page](https://github.com/ARAldhafeeri/gatewatch).
 
