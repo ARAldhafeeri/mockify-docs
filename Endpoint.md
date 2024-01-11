@@ -3,7 +3,7 @@
 Mockify auto-generates mock API endpoints based on two user actions.
 
 ## 1. Auto-generated generic based on resource definition
-![Endpoint](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/endpointres.png) 
+![Endpoint](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/endpointres.png?raw=true) 
 Based on resource creation and feature flagging in resource creation, Mockify auto-generates endpoints for those mocked resources. You can view them at the "Endpoint" tab, labeled as Generic. The schema for the URL is as follows:
 
 ```plaintext
@@ -20,7 +20,7 @@ PUT -> https://<<domainName>>/mock/<resourceName>
 Note: each string enclosed with `< >` is a parameter.
 
 ## 2. Auto-generated based on edge function definition
-![Endpoint](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/endpointedge.png) 
+![Endpoint](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/endpointedge.png?raw=true) 
 Based on edge function definition, Mockify auto-generates endpoints when an Edge Function is created. The schema for the URL is as follows:
 
 ```plaintext
