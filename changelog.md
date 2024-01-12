@@ -16,7 +16,7 @@ not setting res , default response :
 
  Setting  res as follow in the sand box : 
 
-```json
+```JavaScript
 safeRes.httpStatus = 201;
       safeRes.message = 'custom message';
       safeRes.headers = {
@@ -34,7 +34,7 @@ yields the following response :
 
 Important note : if you want to use gatewatch and enforce policy the policy must be saved in PolicyModel and read, otherwise statically typing the policy cases a bug in node vm, somehow nested json error out within the sandbox , example 
 
-```json
+```JavaScript
 const project = await ProjectModel.findOne({name: 'default'});
     const policy =  await PolicyModel.findOne({project: project._id});
     var ac = new AccessControl(policy);
