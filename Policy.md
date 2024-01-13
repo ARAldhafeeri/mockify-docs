@@ -47,67 +47,27 @@ For more information, visit the [gatewatchJS GitHub page](https://github.com/ARA
 3.3. Click "Yes".
 
 
-## Examples with edge functions and gatewatch 
+## Example with edge functions and gatewatch 
 
 Certainly! Here are examples of edge functions using Gatewatch, along with brief explanations for each:
 
-### Example 1: Check User Authorization
 
-```javascript
-// Check if the user is authorized to perform a specific action on a resource
-const isAuthorized = new GrantQuery(enforcedPolicy)
-  .role(user.role)
-  .can(["delete", "create", "update"])
-  .on(["post"])
-  .or(user._id === post.creator._id)
-  .grant();
-
-// Update the response data based on authorization status
-data = { authorized: isAuthorized };
+```javascript 
+const project = await ProjectModel.findOne({name: 'default'});
+const policy =  await PolicyModel.findOne({project: project._id});
+var ac = new AccessControl(policy);
+var enforcedPolicy = ac.enforce();
+const grant = new GrantQuery(policy).role('user').can(['getx']).on(['default']).grant();
+if (grant){
+  data = {
+    "message": "Hello World"
+  };
+} else {
+  safeRes.status = 403;
+  safeRes.message = "forbidden";
+}
+// since there is a policy of role user can perform action of getx on resource default
+// data will return true
+// note : do not hard code policy query it from database
+// if grant is false then safeRes will return 403 forbidden, data is {}
 ```
-
-This example demonstrates how to use Gatewatch within an edge function to check user authorization for specific actions on a resource. Adjust the roles, actions, and resource conditions according to your access control policy.
-
-### Example 2: Dynamic Access Control with Gatewatch
-
-```javascript
-// Perform dynamic access control check using Gatewatch
-const dynamicAccess = new GrantQuery(enforcedPolicy)
-  .role("user")
-  .can(["read"])
-  .on(["dynamicResource"])
-  .or(user._id === "specialUser")
-  .grant();
-
-// Update the response data based on dynamic access control status
-data = { dynamicAccess: dynamicAccess };
-```
-
-This example showcases dynamic access control using Gatewatch within an edge function. Modify the roles, actions, and resource conditions to fit your specific use case.
-
-### Example 3: Conditional Grant Based on Faker Data
-
-```javascript
-// Generate fake data using Faker
-const fakeData = {
-  username: faker.internet.userName(),
-  email: faker.internet.email(),
-  isAdmin: faker.random.boolean(),
-  // Add other fields as needed
-};
-
-// Grant access conditionally based on generated fake data
-const conditionalGrant = new GrantQuery(enforcedPolicy)
-  .role("user")
-  .can(["read"])
-  .on(["fakeResource"])
-  .and(fakeData.isAdmin)
-  .grant();
-
-// Update the response data based on conditional grant status
-data = { conditionalGrant: conditionalGrant };
-```
-
-This example combines the use of Gatewatch with Faker to conditionally grant access based on generated fake data. Adjust the conditions, actions, and resources as per your requirements.
-
-These examples serve as starting points for incorporating Gatewatch into your edge functions for dynamic access control and authorization checks. Adjust the queries, roles, actions, and resource conditions according to your specific access control policies and use cases.

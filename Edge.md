@@ -20,7 +20,12 @@ Each edge function has access to the following context:
   headers,
   body,
   params,
-  faker
+  faker,
+  safeRes : {
+    status: null,
+    message: null,
+    headers: null
+  }
 };
 ```
 
@@ -37,6 +42,14 @@ Each edge function has access to the following context:
 - `body`: Request body
 - `params`: Request params
 - `faker`: Faker instance within the sandbox
+- `safeRes`: Safe response object, it has the following properties:
+  - `status`: Response status code
+  - `message`: Response message
+  - `headers`: Response headers
+  note  : if not set, the default values are:
+  - `status`: 200
+  - `message`: "fetch was successful"
+  - `headers`: regular headers
 
 Please review [Mongoose docs](https://mongoosejs.com/docs/models.html) for more information about mongoose models.
 
@@ -181,6 +194,28 @@ const sensorData = {
 
 // Update the response data
 data = sensorData;
+```
+
+# Example use gatewatch and inforce policy on edge function 
+
+```javascript 
+const project = await ProjectModel.findOne({name: 'default'});
+const policy =  await PolicyModel.findOne({project: project._id});
+var ac = new AccessControl(policy);
+var enforcedPolicy = ac.enforce();
+const grant = new GrantQuery(policy).role('user').can(['getx']).on(['default']).grant();
+if (grant){
+  data = {
+    "message": "Hello World"
+  };
+} else {
+  safeRes.status = 403;
+  safeRes.message = "forbidden";
+}
+// since there is a policy of role user can perform action of getx on resource default
+// data will return true
+// note : do not hard code policy query it from database
+// if grant is false then safeRes will return 403 forbidden, data is {}
 ```
 
 This example illustrates how to simulate sensor data using Faker within an edge function. Adjust the fields and the range of random values based on your specific scenario.
