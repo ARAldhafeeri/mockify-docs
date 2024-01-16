@@ -75,6 +75,31 @@ http://localhost:5000/v1/default/edge/edgeTest
 Response:
 
 
+# 0.40.0-beta 
+
+## Mock endpoints
+
+- bug fix: filter endpoint changed filtering “data?.filterName” to “data.filtername”
+
+## Edge
+
+- bug fix: api access  control
+
+## Swagger
+
+- Bug fixing in swagger generation :
+    - base api url for test execution fixed
+    - fix body of generated swagger api resources
+    - fix try it out, added host name and correct paths.
+    - fix body , query, params, headers
+- Fix menu item for swagger page in navigation
+
+## Endpoint
+
+- added params
+- added path
+- added query
+- headers
 
 # 0.36.0-beta
 
@@ -107,29 +132,29 @@ not setting res , default response :
 
 ```JavaScript
 safeRes.httpStatus = 201;
-      safeRes.message = 'custom message';
-      safeRes.headers = {
-        'x-custom-header': 'custom header value'
-       }
-      sefRes.status = true;
-      data = { test : 'test' }
+safeRes.message = 'custom message';
+safeRes.headers = {
+'x-custom-header': 'custom header value'
+}
+sefRes.status = true;
+data = { test : 'test' }
 ```
 
 yields the following response : 
 
 ```json
-			{"status":false,"message":"custom header value","data": {"test" : "test"} } 201 BAD_REQUEST with header x-custom-header
+{"status":false,"message":"custom header value","data": {"test" : "test"} } 201 BAD_REQUEST with header x-custom-header
 ```
 
 Important note : if you want to use gatewatch and enforce policy the policy must be saved in PolicyModel and read, otherwise statically typing the policy cases a bug in node vm, somehow nested json error out within the sandbox , example 
 
 ```JavaScript
 const project = await ProjectModel.findOne({name: 'default'});
-    const policy =  await PolicyModel.findOne({project: project._id});
-    var ac = new AccessControl(policy);
-    var enforcedPolicy = ac.enforce();
-    const grant = new GrantQuery(policy).role('user').can(['getx']).on(['default']).grant();
-    data = grant
+const policy =  await PolicyModel.findOne({project: project._id});
+var ac = new AccessControl(policy);
+var enforcedPolicy = ac.enforce();
+const grant = new GrantQuery(policy).role('user').can(['getx']).on(['default']).grant();
+data = grant
 // since there is a policy of role user can perform action of getx on resource default
 // data will return true
 // note : do not hard code policy query it from database
