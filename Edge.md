@@ -25,7 +25,9 @@ Each edge function has access to the following context:
     status: null,
     message: null,
     headers: null
-  }
+  },
+  CacheGet,
+  CacheSet
 };
 ```
 
@@ -50,6 +52,8 @@ Each edge function has access to the following context:
   - `status`: 200
   - `message`: "fetch was successful"
   - `headers`: regular headers
+  - CacheGet: function to get key from cache
+  - CacheSet: function to set key in cache
 
 Please review [Mongoose docs](https://mongoosejs.com/docs/models.html) for more information about mongoose models.
 

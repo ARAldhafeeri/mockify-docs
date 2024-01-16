@@ -62,6 +62,7 @@ JWT_EXPIRE=30d
 JWT_COOKIE_EXPIRE=
 ADMIN_USERNAME=reg_admin
 ADMIN_PSWD=reg_admin
+REDIS_URL=redis://redis:6379
 ```
 
 ---
