@@ -1,6 +1,6 @@
 # Events
 
-![events.drawio.png](./imgs/events.png)
+![events.drawio.png](https://raw.githubusercontent.com/ARAldhafeeri/mockify-docs/main/imgs/events.png?raw=true)
 
 Events in [mockify.io](http://mockify.io) allow development  teams to mock event-driven architecture :
 
