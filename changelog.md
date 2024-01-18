@@ -4,7 +4,7 @@
 
 ## Events
 
-![events.drawio.png]([https://prod-files-secure.s3.us-west-2.amazonaws.com/20edb701-0f69-46ec-a709-90be61f1498a/f246a598-3497-4042-be31-d041138c9e64/events.drawio.png](https://raw.githubusercontent.com/ARAldhafeeri/mockify-docs/main/imgs/events.png?raw=true)
+![events.drawio.png](https://raw.githubusercontent.com/ARAldhafeeri/mockify-docs/main/imgs/events.png?raw=true)
 
 Events in [mockify.io](http://mockify.io) allow development  teams to mock event-driven architecture :
 
