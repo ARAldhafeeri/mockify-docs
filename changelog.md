@@ -41,7 +41,7 @@ shared memory recommendation :
 The Event then can be invoked within an edge function :
 
 ```jsx
-await Emit('event:eventName', params)
+await Emit('event:eventName')
 ```
 
 The content of an event is business logic, therefore events have all edge function context, including Emit, to chain events.
