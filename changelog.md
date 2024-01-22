@@ -1,8 +1,33 @@
 # changelog
 
+# 0.47.0 
+## Events
+
+fix resource select, now edge dynamic dropdown, shows all created edge functions for the selected from tabs resource
+
+## Resource
+
+feat - resource now filtered by project id
+
+enhancement for resource forms  
+
+## Cache
+
+fix - when user delete k,v the deleted item disappear from the table as it should.
+
+## Swagger
+
+fix - errors related to try out / test feature, changed host from [mockify.com](http://mockify.com) to mockify.io, added swagger schema https.
+
+## Landing page , docs
+
+styled url for sharing releases.
+
+--- 
+
 # 0.42.0
 
-## Events
+### Events
 
 ![events.drawio.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/20edb701-0f69-46ec-a709-90be61f1498a/f246a598-3497-4042-be31-d041138c9e64/events.drawio.png)
 
@@ -51,6 +76,8 @@ The events page is divided into two main pages :
 1. Manage: User interface for  creating, editing, deleting, viewing events.
 2. Handlers: Business logic invoked when the events are fired.
 
+--- 
+
 # 0.41.0
 
 ## Redis cache and configuration
@@ -65,7 +92,7 @@ Cache page in [mockify.io](http://mockify.io) allow you to create, manage cache,
 - GET v1/cache/all /:projectName  return all cache data for a specific project.
 - Multi-tenant cache database.
 
-# multi tenancy in Redis
+## multi tenancy in Redis
 
 - Access to cache is  restricted per API key.
 - APIKey is linked to projectName, projectName is there with every request url to the cache
@@ -96,7 +123,7 @@ CacheSet(k,v)
 
 The following functions are added to edge function context,  user can get, set keys using the added context. User can provide plain string,mockify will add projectName:key for each get, set request.
 
-### Example covering mock cache requirement TTL
+## Example covering mock cache requirement TTL
 
 **Time-to-Live (TTL):** You can set an expiration time for each key in Redis using the TTL feature. After a specified period, the key will automatically be deleted. This is useful for automatically refreshing the cache periodically.
 
@@ -125,18 +152,19 @@ http://localhost:5000/v1/default/edge/edgeTest
 
 Response:
 
+--- 
 
 # 0.40.0-beta 
 
-## Mock endpoints
+### Mock endpoints
 
 - bug fix: filter endpoint changed filtering “data?.filterName” to “data.filtername”
 
-## Edge
+### Edge
 
 - bug fix: api access  control
 
-## Swagger
+### Swagger
 
 - Bug fixing in swagger generation :
     - base api url for test execution fixed
@@ -151,6 +179,8 @@ Response:
 - added path
 - added query
 - headers
+
+--- 
 
 # 0.36.0-beta
 
@@ -222,6 +252,8 @@ data = grant
 
 - 0.32.0 fix table show resources, actions, roles in dedicated columns
   
+--- 
+
 # 0.27.0-beta
 
 ### All pages
