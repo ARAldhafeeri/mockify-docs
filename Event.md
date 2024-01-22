@@ -1,6 +1,6 @@
 # Events
 
-![events.drawio.png](./imgs/events.png)
+![events.drawio.png](https://raw.githubusercontent.com/ARAldhafeeri/mockify-docs/main/imgs/events.png?raw=true)
 
 Events in [mockify.io](http://mockify.io) allow development  teams to mock event-driven architecture :
 
@@ -10,23 +10,23 @@ Events in [mockify.io](http://mockify.io) allow development  teams to mock event
 
 **Control flow ( figure 1) :**
 
-step 1) admin configure events in the admin portal
+step-1) admin configure events in the admin portal
 
-2) [Mockify.io](http://Mockify.io) uses NodeJS run time to create, update, delete events upon events REST API call 
+step-2 ) Mockify.io uses NodeJS run time to create, update, delete events upon events REST API call
 
-3,4) events data are persisted to MongoDB
+step-3,step-4) events data are persisted to MongoDB
 
-5) upon successful persistence the event is added to NodeJS EventEmitter. 
+step-5) upon successful persistence the event is added to NodeJS EventEmitter.
 
-6) event is listening to an invoke from NodeJS runtime.
+step-6) event is listening to an invoke from NodeJS runtime.
 
-7) mockify client send request to an edge function with events in it.
+step-7) mockify client send request to an edge function with events in it.
 
-8, 9) edge function invoke events, NodeJS publish the event
+step-8, step-9) edge function invoke events, NodeJS publish the event
 
-10, 11) event invoked with access to  shared memory ( redis db )
+step-10, step-11) event invoked with access to shared memory ( redis db )
 
-12,13, 14 ) events invoked edge function return response 
+step-12,step-13, step-14 ) events invoked edge function return response
 
 shared memory recommendation : 
 
