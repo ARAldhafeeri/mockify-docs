@@ -1,5 +1,19 @@
 # changelog
 
+# 0.50.0
+
+### Configure
+
+- Configuration  tab : For pages related to configuration in mockify.io
+- Configure client page : Configure client credientials for websocket microservice
+
+### WS
+
+- Backend  - new highly scalable wss service.
+- Frontend - upon creating client credentials, the client will be able to connect to the wss service. WSS endpoint will be shown in  Endpoint page, under each resource tab that belong to a project with client credentials.
+
+-- 
+
 # 0.47.0 
 ## Events
 
