@@ -32,7 +32,6 @@ Each edge function has access to the following context:
 ```
 
 ### Context Description:
-- `mongoose`: Mongoose instance within the sandbox
 - `ResourceModel`: Mongoose model for resources
 - `DataModel`: Mongoose model for data
 - `ProjectModel`: Mongoose model for projects
@@ -54,6 +53,8 @@ Each edge function has access to the following context:
   - `headers`: regular headers
   - CacheGet: function to get key from cache
   - CacheSet: function to set key in cache
+
+Note : for security reasons, the models data are restricted to the project that the edge function belongs to, and to the resource that the edge function is attached to. For example if the edge function is attached to a resource called "default" and the project is called "default", then the edge function will have access to the data of the resource "default" and the project "default". Any data does not belong to edge function's resource or project will not be accessible, removed before returning the data to the client.
 
 Please review [Mongoose docs](https://mongoosejs.com/docs/models.html) for more information about mongoose models.
 
