@@ -1,6 +1,14 @@
 # Manage Mockify Resources
 
-The resources page is for managing mockify resources, where you can create, edit, and delete resources. Note that for every resource, generic endpoints will be created based on enabled/disabled features. The generic endpoints will follow this pattern: `<domainName>/mock/<resourceName>`. You can view these generic endpoints in the endpoint tab under the URL column.
+![resources page](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/resourcespage.png?raw=true)
+
+The resources page is where you manage mockify resources; it allows you to add, modify, and remove resources.  Two primary components define a resource:
+
+1. Schema: Let users of Mockify specify the resource's schema by indicating the name and type of each field.
+2. Features flags: enable users of mockify to adjust the level of resource security by having full control of enabling or disabling features such as the  ability to send put, delete, post, and get http requests.
+
+
+Be aware that based on features that are enabled or disabled, generic endpoints will be constructed for each resource. The `<domainName>/mock/<resourceUID>} pattern will be followed by the generic endpoints. Under the URL column on the endpoint tab, you can see these generic endpoints.
 
 ## Create Resource
 
