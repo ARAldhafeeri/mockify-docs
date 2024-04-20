@@ -1,6 +1,6 @@
 # Manage Mockify Resources
 
-![resources page](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/resourcespage.png?raw=true)
+![resourcespage](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/resourcespage.png?raw=true)
 
 The resources page is where you manage mockify resources; it allows you to add, modify, and remove resources.  Two primary components define a resource:
 

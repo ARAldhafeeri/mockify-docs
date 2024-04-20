@@ -1,6 +1,9 @@
 # Manage Mockify Data
 
-The data page is for managing mockup data. You can create, edit, and delete data. Here, you can select a specific resource and add data manually to it. In the near future, we will add FakerJS so you can generate your mock data with ease.
+![datapage](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/mockdatapage.png?raw=true)
+
+
+The data page is for managing mockup data. You can create, edit, and delete data for each resource. The mock data is bound to the resource schema you defined, but it's flexiable unless you post to validate feature endpoint. Here, you can select a specific resource and add data manually to it. In the near future, we will add FakerJS so you can generate your mock data with ease.
 
 ## Create Data
 
