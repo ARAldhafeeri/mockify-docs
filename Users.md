@@ -1,5 +1,7 @@
 # Manage Mockify Users
 
+![gatewatch](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/userspage.png?raw=true)
+
 The users page is for managing Mockify admin portal users, and mock users for mock API endpoints and projects. There are 3 default types of users:
 
 1. Super Admin
@@ -7,6 +9,11 @@ The users page is for managing Mockify admin portal users, and mock users for mo
 3. User
 
 Super Admin is the main admin of the platform and can perform all actions, currently there is only one per deployment for security reasons. Admins can do everything except managing users. Users can only manage their own projects. To manage users, you need to be a Super Admin.
+
+Currently, users can view projects created by them. In the near future, we will enable administrators to add users to specific projects so they can collaborate on a single project.
+
+
+For example, an admin can create projects, resources, and handover endpoints to developers, but they are not necessarily required to know how to code and write edge functions or manage mock data, caches, and websockets.
 
 ## Create Super Admin
 
