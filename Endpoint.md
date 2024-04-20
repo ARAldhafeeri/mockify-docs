@@ -24,7 +24,7 @@ Note: Each string enclosed with `< >` is a parameter.
 Based on the definition of an edge function, Mockify auto-generates endpoints when an edge function is created. The schema for the URL is as follows:
 
 ```plaintext
-https://<<domainName>>/<resourceName>/edge/<edgeFunctionName>
+https://<<domainName>>/<resourceUID>/edge/<edgeFunctionUID>
 ```
 Note: : function feature flag should be enabled in the resource definition. Also, the method the edge function uses should be enabled in the resource definition.
 
@@ -37,7 +37,7 @@ resource -> resource
 Then the following endpoints will be auto-generated:
    
 ```plaintext
-GET -> https://<<domainName>>/<resourceName>/edge/test
+GET -> https://<<domainName>>/<resourceUID>/<edgeFunctionUID>/test
 ```
 
 Note: Each string enclosed with `< >` is a URL parameter.
