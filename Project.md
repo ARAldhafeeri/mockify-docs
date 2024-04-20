@@ -1,6 +1,7 @@
 # Manage Mockify Projects
+![gatewatch](https://github.com/ARAldhafeeri/mockify-docs/blob/main/imgs/projectpage.png?raw=true)
 
-The projects page is for managing Mockify projects, where you can create, edit, and delete projects. Note that with every project creation, an API key is generated to be used on resources linked to the project. For every request to any project resource, the `x-api-key` header must be included. You can copy the API key from the project page table.
+You manage Mockify projects on the projects page, where you may add, modify, and remove projects. It should be noted that an API key is generated for use on project-related resources at the time of project creation. It is mandatory to include the `x-api-key header with every request made to any project endpoint. The project page table contains the API key, which you can copy. All resources have to be associated with a project; this is how access control is handled by mockify.io. Keep your access key private and secure; Mockify.io wants to speed up your development, not jeopardize the infrastructure on which your services are hosted.
 
 ## Create Project
 
